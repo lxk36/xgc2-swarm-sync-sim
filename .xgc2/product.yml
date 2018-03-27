@@ -1,7 +1,7 @@
 schema: xgc2.product.v1
 id: xgc2-swarm-sync-sim
 name: XGC2 Swarm Sync Sim
-version: 1.1.0-8
+version: 1.1.0-9
 kind: ros1-apt
 summary: Multi-vehicle synchronized simulation packages for ROS Noetic.
 ros:
@@ -55,3 +55,5 @@ ownership:
   - /opt/ros/noetic/lib/fw_plane_sim
 release:
   skip_apt_verify: true
+  apt_versions:
+    focal: 1.1.0-9
