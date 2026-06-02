@@ -7,11 +7,11 @@ ARCH="$(dpkg --print-architecture)"
 source "/opt/ros/${ROS_DISTRO}/setup.bash"
 
 required_debs=(
-  ros-noetic-xgc2-sss-sim-env
-  ros-noetic-xgc2-sss-px4-rotor-sim
-  ros-noetic-xgc2-sss-tello-sim
-  ros-noetic-xgc2-sss-ugv-sim
-  ros-noetic-xgc2-swarm-sync-sim
+  ros-noetic-sss-sim-env
+  ros-noetic-sss-px4-rotor-sim
+  ros-noetic-sss-tello-sim
+  ros-noetic-sss-ugv-sim
+  ros-noetic-sss-swarm-sync-sim
 )
 required_ros_packages=(
   sss_sim_env
@@ -21,7 +21,7 @@ required_ros_packages=(
 )
 
 if [[ "${ARCH}" == "amd64" ]]; then
-  required_debs+=(ros-noetic-xgc2-sss-fw-plane-sim)
+  required_debs+=(ros-noetic-sss-fw-plane-sim)
   required_ros_packages+=(fw_plane_sim)
 fi
 
