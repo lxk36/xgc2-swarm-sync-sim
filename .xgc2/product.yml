@@ -24,6 +24,12 @@ apt:
     - ros-noetic-xgc2-sss-tello-sim
     - ros-noetic-xgc2-sss-ugv-sim
     - ros-noetic-xgc2-sss-fw-plane-sim
+  depends:
+    - ros-noetic-xgc2-sss-sim-env
+    - ros-noetic-xgc2-sss-px4-rotor-sim
+    - ros-noetic-xgc2-sss-tello-sim
+    - ros-noetic-xgc2-sss-ugv-sim
+    - ros-noetic-xgc2-sss-fw-plane-sim
 
 usage:
   install: |
