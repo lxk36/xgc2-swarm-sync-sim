@@ -90,7 +90,7 @@ Maintainer: XGC2 <apt@example.com>
 Depends: ${depends}
 Description: ${description}
 EOF
-  printf 'sss-swarm-sync-sim package\n' > "${pkg_root}/usr/share/doc/${package}/README"
+  printf 'swarm-sync-sim package\n' > "${pkg_root}/usr/share/doc/${package}/README"
   chmod 0755 "${pkg_root}/DEBIAN"
 }
 
@@ -160,7 +160,7 @@ if [[ "${ARCH}" == "amd64" ]]; then
 fi
 
 build_deb \
-  "ros-noetic-sss-swarm-sync-sim" \
+  "ros-noetic-swarm-sync-sim" \
   "" \
   "${meta_depends}" \
   "XGC2 Swarm Sync Sim aggregate package"

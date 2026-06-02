@@ -11,7 +11,7 @@ required_debs=(
   ros-noetic-sss-px4-rotor-sim
   ros-noetic-sss-tello-sim
   ros-noetic-sss-ugv-sim
-  ros-noetic-sss-swarm-sync-sim
+  ros-noetic-swarm-sync-sim
 )
 required_ros_packages=(
   sss_sim_env

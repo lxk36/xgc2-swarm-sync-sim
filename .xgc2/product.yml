@@ -16,9 +16,9 @@ ros:
 apt:
   distribution: focal
   install:
-    - ros-noetic-sss-swarm-sync-sim
+    - ros-noetic-swarm-sync-sim
   packages:
-    - ros-noetic-sss-swarm-sync-sim
+    - ros-noetic-swarm-sync-sim
     - ros-noetic-sss-sim-env
     - ros-noetic-sss-px4-rotor-sim
     - ros-noetic-sss-tello-sim
@@ -34,7 +34,7 @@ apt:
 usage:
   install: |
     sudo apt update
-    sudo apt install ros-noetic-sss-swarm-sync-sim
+    sudo apt install ros-noetic-swarm-sync-sim
   smoke_test: |
     roslaunch --files sss_sim_env sim_clock.launch
 
