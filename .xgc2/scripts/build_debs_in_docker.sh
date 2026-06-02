@@ -101,13 +101,13 @@ docker run --rm \
       -DCMAKE_CXX_FLAGS_RELEASE="-O3 -DNDEBUG" \
       -DCMAKE_C_FLAGS_RELEASE="-O3 -DNDEBUG"
 
-    /workspace/swarm_sync_sim/scripts/package_debs.sh \
+    /workspace/swarm_sync_sim/.xgc2/scripts/package_debs.sh \
       --install-root /workspace/work/install-root \
       --output-dir /workspace/out
 
     if [[ "${INSTALL_CHECK}" == "true" ]]; then
       apt-get install -y /workspace/out/*.deb
-      /workspace/swarm_sync_sim/scripts/check_installed_packages.sh
+      /workspace/swarm_sync_sim/.xgc2/scripts/check_installed_packages.sh
     fi
   '
 
