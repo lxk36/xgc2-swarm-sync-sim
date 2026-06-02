@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp  # already installed with ros-noetic-desktop
   rospy  # already installed with ros-noetic-desktop
   std_msgs  # already installed with ros-noetic-desktop
+  geometry_msgs
   # mavlink # for px4_sitl mavlink messages (already installed with ros-noetic-mavlink by mavros) (mavlink c/c++ header files already downloaded in include/ folder)
   mavros # for mavros_sim mavros::ftf::
   mavros_msgs
@@ -191,6 +192,13 @@ add_executable(px4_rotor_visualizer_node
 target_link_libraries(px4_rotor_visualizer_node
    ${catkin_LIBRARIES}
    px4_rotor_visualizer
+)
+
+add_executable(mavros_vrpn_forwarder_node
+                  src/mavros_px4_quadrotor_sim/mavros_vrpn_forwarder_node.cpp)
+
+target_link_libraries(mavros_vrpn_forwarder_node
+   ${catkin_LIBRARIES}
 )
 
 ## System dependencies are found with CMake's conventions
@@ -376,6 +384,7 @@ target_link_libraries(px4_rotor_visualizer_node
 install(TARGETS 
 	mavros_px4_quadrotor_sim_node
 	px4_rotor_visualizer_node
+	mavros_vrpn_forwarder_node
 	px4_rotor_dynamics
 	px4_lib
 	mc_pos_control
