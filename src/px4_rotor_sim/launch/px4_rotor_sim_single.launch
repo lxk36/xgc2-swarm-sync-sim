@@ -2,7 +2,7 @@
 <launch>
     <!-- Different arguments for each vehicle -->
 
-    <arg name="namespace" default="uav1"/>
+    <arg name="ns" default="uav1"/>
     <arg name="init_x_East_metre" default="0.0"/>
     <arg name="init_y_North_metre" default="0.0"/>
     <arg name="init_z_Up_metre" default="0.0"/>
@@ -31,11 +31,11 @@
  <!-- if not use sim time, no need to use nodelet as there is no accelerating -->
 <arg name="use_nodelet_manager" value="$(arg use_sim_time)"/>
 
-<group ns="$(arg namespace)">
+<group ns="$(arg ns)">
     <group if="$(arg use_nodelet_manager)">  <!-- /nodelet_manager should be lauched by sim_clock.launch -->
     	<param name="/use_sim_time" value="true"/>
         <param name="/use_sss_sim_time" value="true"/>
-        <node pkg="nodelet" type="nodelet" name="mavros_px4_quadrotor_sim_nodelet_$(arg namespace)" args="load mavros_px4_quadrotor_sim_nodelet /nodelet_manager" output="screen">
+        <node pkg="nodelet" type="nodelet" name="mavros_px4_quadrotor_sim_nodelet_$(arg ns)" args="load mavros_px4_quadrotor_sim_nodelet /nodelet_manager" output="screen">
             <!-- load local position source -->
             <param name="local_pos_source" value="$(arg local_pos_source)"/>
             <!-- load init position -->
@@ -52,16 +52,16 @@
             <rosparam command="load" file="$(arg px4_rotor_sim_param_config_yaml)" />    
             <param name="visualize_max_freq" value="$(arg visualize_max_freq)"/> 
             <!-- for robot TF visualizer -->
-            <param name="base_link_tf_prefix" value="$(arg namespace)"/>
+            <param name="base_link_tf_prefix" value="$(arg ns)"/>
             <!-- for marker name visualize -->
-            <param name="visualize_marker_name" value="$(arg namespace)"/>
+            <param name="visualize_marker_name" value="$(arg ns)"/>
             <!-- load mavros plugin config (Not mandatory ) -->
             <!-- rosparam command="load" file="$(arg mavros_sim_plugin_config_yaml)" /--> 
         </node>
     </group>
 
     <group unless="$(arg use_nodelet_manager)">  <!--launched as a normal ROS node -->
-        <node pkg="nodelet" type="nodelet" name="mavros_px4_quadrotor_sim_nodelet_$(arg namespace)" args="standalone mavros_px4_quadrotor_sim_nodelet" output="screen">
+        <node pkg="nodelet" type="nodelet" name="mavros_px4_quadrotor_sim_nodelet_$(arg ns)" args="standalone mavros_px4_quadrotor_sim_nodelet" output="screen">
             <!-- load local position source -->
             <param name="local_pos_source" value="$(arg local_pos_source)"/>
             <!-- load init position -->
@@ -78,9 +78,9 @@
             <rosparam command="load" file="$(arg px4_rotor_sim_param_config_yaml)" />   
             <param name="visualize_max_freq" value="$(arg visualize_max_freq)"/> 
             <!-- for robot TF visualizer -->
-            <param name="base_link_tf_prefix" value="$(arg namespace)"/>
+            <param name="base_link_tf_prefix" value="$(arg ns)"/>
             <!-- for marker name visualize -->
-            <param name="visualize_marker_name" value="$(arg namespace)"/>
+            <param name="visualize_marker_name" value="$(arg ns)"/>
             <!-- load mavros plugin config (Not mandatory ) -->
             <!-- rosparam command="load" file="$(arg mavros_sim_plugin_config_yaml)" /-->      
         </node>
@@ -89,7 +89,7 @@
     <!-- Visualization -->
     <param name="robot_description" textfile="$(find px4_rotor_sim)/model/iris.urdf" />
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
-        <param name="tf_prefix" value="$(arg namespace)"/>
+        <param name="tf_prefix" value="$(arg ns)"/>
     </node>
     <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> -->  <!-- joint states and base_link TF published by drone_visualizer instance in mavros_px4_quadrotor_sim_node already -->
     <group if="$(arg open_rviz)">

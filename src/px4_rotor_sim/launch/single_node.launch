@@ -2,7 +2,7 @@
 <launch>
     <!-- Different arguments for each vehicle -->
 
-    <arg name="namespace" default="uav1"/>
+    <arg name="ns" default="uav1"/>
     <arg name="init_x_East_metre" default="0.0"/>
     <arg name="init_y_North_metre" default="0.0"/>
     <arg name="init_z_Up_metre" default="0.0"/>
@@ -26,8 +26,8 @@
     
 <!--param name="/use_sim_time" value="$(arg use_sim_time)"/-->
 
-<group ns="$(arg namespace)">
-    <node pkg="px4_rotor_sim" type="mavros_px4_quadrotor_sim_node" name="mavros_px4_quadrotor_sim_node_$(arg namespace)" output="screen">
+<group ns="$(arg ns)">
+    <node pkg="px4_rotor_sim" type="mavros_px4_quadrotor_sim_node" name="mavros_px4_quadrotor_sim_node_$(arg ns)" output="screen">
         <!-- load local position source -->
         <param name="local_pos_source" value="$(arg local_pos_source)"/>
         <!-- load init position -->
@@ -40,9 +40,9 @@
         <!-- load px4 param -->
         <rosparam command="load" file="$(arg px4_rotor_sim_param_config_yaml)" />   
         <!-- for robot TF visualizer -->
-        <param name="base_link_tf_prefix" value="$(arg namespace)"/>
+        <param name="base_link_tf_prefix" value="$(arg ns)"/>
         <!-- for marker name visualize -->
-        <param name="visualize_marker_name" value="$(arg namespace)"/>
+        <param name="visualize_marker_name" value="$(arg ns)"/>
         <!-- load mavros plugin config (Not mandatory ) -->
         <!-- rosparam command="load" file="$(arg mavros_sim_plugin_config_yaml)" /-->      
     </node>
@@ -50,7 +50,7 @@
     <!-- Visualization -->
     <param name="robot_description" textfile="$(find px4_rotor_sim)/model/iris.urdf" />
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
-        <param name="tf_prefix" value="$(arg namespace)"/>
+        <param name="tf_prefix" value="$(arg ns)"/>
     </node>
     <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> -->  <!-- joint states and base_link TF published by drone_visualizer instance in mavros_px4_quadrotor_sim_node already -->
     <group if="$(arg open_rviz)">

@@ -2,43 +2,43 @@
 <launch>
     <arg name="open_rviz" default="true"/>
 
-    <include file="$(find px4_rotor_sim)/launch/test_group.launch">
+    <include file="$(dirname)/test_group.launch">
         <arg name="group_id" value="0"/>
     </include>
 
-    <include file="$(find px4_rotor_sim)/launch/test_group.launch">
+    <include file="$(dirname)/test_group.launch">
         <arg name="group_id" value="1"/>
     </include>
 
-    <include file="$(find px4_rotor_sim)/launch/test_group.launch">
+    <include file="$(dirname)/test_group.launch">
         <arg name="group_id" value="2"/>
     </include>
 
-    <include file="$(find px4_rotor_sim)/launch/test_group.launch">
+    <include file="$(dirname)/test_group.launch">
         <arg name="group_id" value="3"/>
     </include>
 
-    <include file="$(find px4_rotor_sim)/launch/test_group.launch">
+    <include file="$(dirname)/test_group.launch">
         <arg name="group_id" value="4"/>
     </include>
 
-    <include file="$(find px4_rotor_sim)/launch/test_group.launch">
+    <include file="$(dirname)/test_group.launch">
         <arg name="group_id" value="5"/>
     </include>
 
-    <include file="$(find px4_rotor_sim)/launch/test_group.launch">
+    <include file="$(dirname)/test_group.launch">
         <arg name="group_id" value="6"/>
     </include>
 
-    <include file="$(find px4_rotor_sim)/launch/test_group.launch">
+    <include file="$(dirname)/test_group.launch">
         <arg name="group_id" value="7"/>
     </include>
 
-    <include file="$(find px4_rotor_sim)/launch/test_group.launch">
+    <include file="$(dirname)/test_group.launch">
         <arg name="group_id" value="8"/>
     </include>
 
-    <include file="$(find px4_rotor_sim)/launch/test_group.launch">
+    <include file="$(dirname)/test_group.launch">
         <arg name="group_id" value="9"/>
     </include>
     

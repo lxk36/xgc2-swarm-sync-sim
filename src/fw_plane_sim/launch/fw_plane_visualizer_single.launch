@@ -2,16 +2,16 @@
 <!-- For visualization in real experiments -->
 
 <launch>
-    <arg name="namespace" default="uav1"/>
+    <arg name="ns" default="uav1"/>
     <arg name="open_rviz" default="true"/>
 
     <arg name="visualize_max_freq" default="30"/> <!-- (Hz) Maximum  Maximum base_link tf publishing rate  -->
     <arg name="enable_history_path" default="true"/> <!-- Enable visualizing history path  -->
     <arg name="visualize_path_time" default="60"/> <!-- (s) displaying history path time -->
     <arg name="visualize_tf_frame" default="map"/> <!-- tf world frame name -->
-    <arg name="visualize_marker_name" default="$(arg namespace)"/> <!-- visualize_marker_name -->
+    <arg name="visualize_marker_name" default="$(arg ns)"/> <!-- visualize_marker_name -->
     <arg name="base_link_name" default="base_link"/> <!-- base link name in the robot urdf -->
-    <arg name="base_link_tf_prefix" default="$(arg namespace)"/> <!-- tf prefix added to the base_link_name -->
+    <arg name="base_link_tf_prefix" default="$(arg ns)"/> <!-- tf prefix added to the base_link_name -->
     <arg name="rotor_0_joint_name" default="rotor_puller_joint"/> <!-- rotor revolute joint name in the robot urdf -->
     <arg name="local_pos_source" default="1"/> <!-- mavros/local_position/pose source -->     
     <!-- 0 for mocap (use local_position/pose for visualization directly) -->     
@@ -23,15 +23,15 @@
     <arg name="urdf_model_path" default="$(find fw_plane_sim)/model/plane.urdf"/>
 
 <!-- For visualization in real experiments -->
-<group ns="$(arg namespace)">    
+<group ns="$(arg ns)">
     <param name="robot_description" textfile="$(arg urdf_model_path)" />
     
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
-        <param name="tf_prefix" value="$(arg namespace)"/>
+        <param name="tf_prefix" value="$(arg ns)"/>
         <!-- <param name="ignore_timestamp" value="true"/> -->
     </node>
     
-    <node pkg="fw_plane_sim" type="fw_plane_visualizer_node" name="fw_plane_visualizer_node_$(arg namespace)" output="screen">
+    <node pkg="fw_plane_sim" type="fw_plane_visualizer_node" name="fw_plane_visualizer_node_$(arg ns)" output="screen">
         <param name="visualize_max_freq" value="$(arg visualize_max_freq)"/>
         <param name="visualize_path_time" value="$(arg visualize_path_time)"/>
         <param name="visualize_tf_frame" value="$(arg visualize_tf_frame)"/>

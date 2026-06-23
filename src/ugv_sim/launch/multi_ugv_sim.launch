@@ -3,9 +3,9 @@
     <arg name="use_sim_time" default="true"/> <!-- Note that 'use_sim_time' param is global. All nodes in all launch files will use sim time if use_sim_time is set true in any launch file -->
     <arg name="open_rviz" default="true"/>
 
-    <include file="$(find ugv_sim)/launch/ugv_sim_single.launch">
+    <include file="$(dirname)/ugv_sim_single.launch">
         <arg name="ugv_type" value="0"/> <!-- 0 mecanum, 1 unicycle, 2 ackermann -->
-        <arg name="namespace" value="ugv1"/>
+        <arg name="ns" value="ugv1"/>
         <arg name="init_x_East_metre" value="1.0"/>
         <arg name="init_y_North_metre" value="0.0"/>
         <arg name="init_z_Up_metre" value="0.0"/>
@@ -16,9 +16,9 @@
         <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     </include>
 
-    <include file="$(find ugv_sim)/launch/ugv_sim_single.launch">
+    <include file="$(dirname)/ugv_sim_single.launch">
         <arg name="ugv_type" value="0"/> <!-- 0 mecanum, 1 unicycle, 2 ackermann -->
-        <arg name="namespace" value="ugv2"/>
+        <arg name="ns" value="ugv2"/>
         <arg name="init_x_East_metre" value="2.0"/>
         <arg name="init_y_North_metre" value="0.0"/>
         <arg name="init_z_Up_metre" value="0.0"/>
@@ -29,9 +29,9 @@
         <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     </include>
 
-    <include file="$(find ugv_sim)/launch/ugv_sim_single.launch">
+    <include file="$(dirname)/ugv_sim_single.launch">
         <arg name="ugv_type" value="0"/> <!-- 0 mecanum, 1 unicycle, 2 ackermann -->
-        <arg name="namespace" value="ugv3"/>
+        <arg name="ns" value="ugv3"/>
         <arg name="init_x_East_metre" value="3.0"/>
         <arg name="init_y_North_metre" value="0.0"/>
         <arg name="init_z_Up_metre" value="0.0"/>
@@ -42,9 +42,9 @@
         <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     </include>
 
-    <include file="$(find ugv_sim)/launch/ugv_sim_single.launch">
+    <include file="$(dirname)/ugv_sim_single.launch">
         <arg name="ugv_type" value="0"/> <!-- 0 mecanum, 1 unicycle, 2 ackermann -->
-        <arg name="namespace" value="ugv4"/>
+        <arg name="ns" value="ugv4"/>
         <arg name="init_x_East_metre" value="4.0"/>
         <arg name="init_y_North_metre" value="0.0"/>
         <arg name="init_z_Up_metre" value="0.0"/>
@@ -55,9 +55,9 @@
         <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     </include>
 
-    <!-- <include file="$(find ugv_sim)/launch/ugv_sim_single.launch">
+    <!-- <include file="$(dirname)/ugv_sim_single.launch">
         <arg name="ugv_type" value="0"/>
-        <arg name="namespace" value="ugv5"/>
+        <arg name="ns" value="ugv5"/>
         <arg name="init_x_East_metre" value="5.0"/>
         <arg name="init_y_North_metre" value="0.0"/>
         <arg name="init_z_Up_metre" value="0.0"/>
@@ -68,9 +68,9 @@
         <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     </include>
 
-    <include file="$(find ugv_sim)/launch/ugv_sim_single.launch">
+    <include file="$(dirname)/ugv_sim_single.launch">
         <arg name="ugv_type" value="0"/>
-        <arg name="namespace" value="ugv6"/>
+        <arg name="ns" value="ugv6"/>
         <arg name="init_x_East_metre" value="6.0"/>
         <arg name="init_y_North_metre" value="0.0"/>
         <arg name="init_z_Up_metre" value="0.0"/>
@@ -81,9 +81,9 @@
         <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     </include>
 
-    <include file="$(find ugv_sim)/launch/ugv_sim_single.launch">
+    <include file="$(dirname)/ugv_sim_single.launch">
         <arg name="ugv_type" value="0"/>
-        <arg name="namespace" value="ugv7"/>
+        <arg name="ns" value="ugv7"/>
         <arg name="init_x_East_metre" value="7.0"/>
         <arg name="init_y_North_metre" value="0.0"/>
         <arg name="init_z_Up_metre" value="0.0"/>
@@ -94,9 +94,9 @@
         <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     </include>
 
-    <include file="$(find ugv_sim)/launch/ugv_sim_single.launch">
+    <include file="$(dirname)/ugv_sim_single.launch">
         <arg name="ugv_type" value="0"/>
-        <arg name="namespace" value="ugv8"/>
+        <arg name="ns" value="ugv8"/>
         <arg name="init_x_East_metre" value="8.0"/>
         <arg name="init_y_North_metre" value="0.0"/>
         <arg name="init_z_Up_metre" value="0.0"/>
@@ -107,9 +107,9 @@
         <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     </include>
 
-    <include file="$(find ugv_sim)/launch/ugv_sim_single.launch">
+    <include file="$(dirname)/ugv_sim_single.launch">
         <arg name="ugv_type" value="0"/>
-        <arg name="namespace" value="ugv9"/>
+        <arg name="ns" value="ugv9"/>
         <arg name="init_x_East_metre" value="9.0"/>
         <arg name="init_y_North_metre" value="0.0"/>
         <arg name="init_z_Up_metre" value="0.0"/>
@@ -120,9 +120,9 @@
         <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     </include>
 
-    <include file="$(find ugv_sim)/launch/ugv_sim_single.launch">
+    <include file="$(dirname)/ugv_sim_single.launch">
         <arg name="ugv_type" value="0"/>
-        <arg name="namespace" value="ugv10"/>
+        <arg name="ns" value="ugv10"/>
         <arg name="init_x_East_metre" value="10.0"/>
         <arg name="init_y_North_metre" value="0.0"/>
         <arg name="init_z_Up_metre" value="0.0"/>
