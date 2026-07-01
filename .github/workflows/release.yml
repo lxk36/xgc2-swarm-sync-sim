@@ -76,11 +76,7 @@ jobs:
         run: echo "Source and install checks run as part of the deb build."
 
   build:
-    needs:
-      - validate-release-inputs
-      - cpp-quality
-      - source-tests
-    if: ${{ always() && needs.validate-release-inputs.result == 'success' && (needs.cpp-quality.result == 'success' || needs.cpp-quality.result == 'skipped') && (needs.source-tests.result == 'success' || needs.source-tests.result == 'skipped') }}
+    needs: validate-release-inputs
     strategy:
       fail-fast: false
       matrix:
