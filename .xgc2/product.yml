@@ -1,6 +1,7 @@
 schema: xgc2.product.v1
 id: xgc2-swarm-sync-sim
 name: XGC2 Swarm Sync Sim
+version: 1.0.0-1
 kind: ros1-apt
 summary: Multi-vehicle synchronized simulation packages for ROS Noetic.
 
