@@ -1,53 +1,52 @@
 schema: xgc2.product.v1
 id: xgc2-swarm-sync-sim
 name: XGC2 Swarm Sync Sim
-version: 1.1.0-1
+version: 1.1.0-2
 kind: ros1-apt
 summary: Multi-vehicle synchronized simulation packages for ROS Noetic.
-
 ros:
   distro: noetic
   packages:
-    - sss_sim_env
-    - px4_rotor_sim
-    - tello_sim
-    - ugv_sim
-    - fw_plane_sim
-
+  - sss_sim_env
+  - px4_rotor_sim
+  - tello_sim
+  - ugv_sim
+  - fw_plane_sim
 apt:
   distribution: focal
   install:
-    - ros-noetic-swarm-sync-sim
+  - ros-noetic-swarm-sync-sim
   packages:
-    - ros-noetic-swarm-sync-sim
-    - ros-noetic-sss-sim-env (>= 1.1.0-1)
-    - ros-noetic-sss-px4-rotor-sim (>= 1.1.0-1)
-    - ros-noetic-sss-tello-sim (>= 1.1.0-1)
-    - ros-noetic-sss-ugv-sim (>= 1.1.0-1)
-    - ros-noetic-sss-fw-plane-sim (>= 1.1.0-1)
+  - ros-noetic-swarm-sync-sim
+  - ros-noetic-sss-sim-env (>= 1.1.0-1)
+  - ros-noetic-sss-px4-rotor-sim (>= 1.1.0-1)
+  - ros-noetic-sss-tello-sim (>= 1.1.0-1)
+  - ros-noetic-sss-ugv-sim (>= 1.1.0-1)
+  - ros-noetic-sss-fw-plane-sim (>= 1.1.0-1)
   depends:
-    - ros-noetic-sss-sim-env
-    - ros-noetic-sss-px4-rotor-sim
-    - ros-noetic-sss-tello-sim
-    - ros-noetic-sss-ugv-sim
-    - ros-noetic-sss-fw-plane-sim
-
+  - ros-noetic-sss-sim-env
+  - ros-noetic-sss-px4-rotor-sim
+  - ros-noetic-sss-tello-sim
+  - ros-noetic-sss-ugv-sim
+  - ros-noetic-sss-fw-plane-sim
 usage:
-  install: |
-    sudo apt update
-    sudo apt install ros-noetic-swarm-sync-sim
-  smoke_test: |
-    roslaunch --files sss_sim_env sim_clock.launch
+  install: 'sudo apt update
 
+    sudo apt install ros-noetic-swarm-sync-sim
+
+    '
+  smoke_test: 'roslaunch --files sss_sim_env sim_clock.launch
+
+    '
 ownership:
   paths:
-    - /opt/ros/noetic/share/sss_sim_env
-    - /opt/ros/noetic/share/px4_rotor_sim
-    - /opt/ros/noetic/share/tello_sim
-    - /opt/ros/noetic/share/ugv_sim
-    - /opt/ros/noetic/share/fw_plane_sim
-    - /opt/ros/noetic/lib/sss_sim_env
-    - /opt/ros/noetic/lib/px4_rotor_sim
-    - /opt/ros/noetic/lib/tello_sim
-    - /opt/ros/noetic/lib/ugv_sim
-    - /opt/ros/noetic/lib/fw_plane_sim
+  - /opt/ros/noetic/share/sss_sim_env
+  - /opt/ros/noetic/share/px4_rotor_sim
+  - /opt/ros/noetic/share/tello_sim
+  - /opt/ros/noetic/share/ugv_sim
+  - /opt/ros/noetic/share/fw_plane_sim
+  - /opt/ros/noetic/lib/sss_sim_env
+  - /opt/ros/noetic/lib/px4_rotor_sim
+  - /opt/ros/noetic/lib/tello_sim
+  - /opt/ros/noetic/lib/ugv_sim
+  - /opt/ros/noetic/lib/fw_plane_sim
