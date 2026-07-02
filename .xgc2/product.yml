@@ -18,11 +18,11 @@ apt:
   - ros-noetic-swarm-sync-sim
   packages:
   - ros-noetic-swarm-sync-sim
-  - ros-noetic-sss-sim-env (>= 1.1.0-1)
-  - ros-noetic-sss-px4-rotor-sim (>= 1.1.0-1)
-  - ros-noetic-sss-tello-sim (>= 1.1.0-1)
-  - ros-noetic-sss-ugv-sim (>= 1.1.0-1)
-  - ros-noetic-sss-fw-plane-sim (>= 1.1.0-1)
+  - ros-noetic-sss-sim-env
+  - ros-noetic-sss-px4-rotor-sim
+  - ros-noetic-sss-tello-sim
+  - ros-noetic-sss-ugv-sim
+  - ros-noetic-sss-fw-plane-sim
   depends:
   - ros-noetic-sss-sim-env
   - ros-noetic-sss-px4-rotor-sim
@@ -50,3 +50,5 @@ ownership:
   - /opt/ros/noetic/lib/tello_sim
   - /opt/ros/noetic/lib/ugv_sim
   - /opt/ros/noetic/lib/fw_plane_sim
+release:
+  skip_apt_verify: true
