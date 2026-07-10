@@ -129,7 +129,7 @@ build_deb() {
 }
 
 base_depends="ros-noetic-roscpp, ros-noetic-rospy, ros-noetic-std-msgs"
-sim_env_pkg="ros-noetic-sss-sim-env"
+sim_env_pkg="ros-noetic-sss-sim-env (>= 1.1.0-7)"
 
 build_deb \
   "${sim_env_pkg}" \
@@ -139,36 +139,36 @@ build_deb \
   libsim_clock libClockUpdater libsss_timer libsss_sleep
 
 build_deb \
-  "ros-noetic-sss-px4-rotor-sim" \
+  "ros-noetic-sss-px4-rotor-sim (>= 1.1.0-7)" \
   "px4_rotor_sim" \
   "${sim_env_pkg} (= ${VERSION}), ${base_depends}, ros-noetic-mavros, ros-noetic-mavros-msgs, ros-noetic-mavros-extras, ros-noetic-eigen-conversions, ros-noetic-geometry-msgs, ros-noetic-nav-msgs, ros-noetic-sensor-msgs, ros-noetic-tf-conversions, ros-noetic-tf2-geometry-msgs, ros-noetic-tf2-ros, ros-noetic-nodelet, ros-noetic-pluginlib, ros-noetic-visualization-msgs, ros-noetic-robot-state-publisher, ros-noetic-rviz, libboost-dev, libeigen3-dev" \
   "XGC2 Swarm Sync Sim PX4 rotor simulation package" \
   libpx4_rotor_dynamics libpx4_lib libmc_pos_control libmc_att_control libcommander libpx4_mavlink libpx4_sitl libMavrosSim libpx4_rotor_visualizer libmavros_px4_quadrotor_sim_nodelet
 
 build_deb \
-  "ros-noetic-sss-tello-sim" \
+  "ros-noetic-sss-tello-sim (>= 1.1.0-7)" \
   "tello_sim" \
   "${sim_env_pkg} (= ${VERSION}), ${base_depends}, ros-noetic-sensor-msgs, ros-noetic-geometry-msgs, ros-noetic-nav-msgs, ros-noetic-nodelet, ros-noetic-pluginlib, ros-noetic-tf2-ros, ros-noetic-visualization-msgs, ros-noetic-robot-state-publisher, ros-noetic-rviz, libboost-dev, libeigen3-dev" \
   "XGC2 Swarm Sync Sim Tello simulation package" \
   libtello_dynamics libtello_driver_sim libtello_quadrotor_sim_nodelet
 
 build_deb \
-  "ros-noetic-sss-ugv-sim" \
+  "ros-noetic-sss-ugv-sim (>= 1.1.0-7)" \
   "ugv_sim" \
   "${sim_env_pkg} (= ${VERSION}), ${base_depends}, ros-noetic-sensor-msgs, ros-noetic-geometry-msgs, ros-noetic-nav-msgs, ros-noetic-nodelet, ros-noetic-pluginlib, ros-noetic-tf2-ros, ros-noetic-visualization-msgs, ros-noetic-robot-state-publisher, ros-noetic-rviz, ros-noetic-xacro, libboost-dev, libeigen3-dev" \
   "XGC2 Swarm Sync Sim UGV simulation package" \
   libugv_dynamics libwheeltec_driver_sim libwheeltec_ugv_sim_nodelet
 
-meta_depends="${sim_env_pkg} (= ${VERSION}), ros-noetic-sss-px4-rotor-sim (= ${VERSION}), ros-noetic-sss-tello-sim (= ${VERSION}), ros-noetic-sss-ugv-sim (= ${VERSION})"
+meta_depends="${sim_env_pkg} (= ${VERSION}), ros-noetic-sss-px4-rotor-sim (>= 1.1.0-7) (= ${VERSION}), ros-noetic-sss-tello-sim (>= 1.1.0-7) (= ${VERSION}), ros-noetic-sss-ugv-sim (>= 1.1.0-7) (= ${VERSION})"
 
 if [[ "${ARCH}" == "amd64" ]]; then
   build_deb \
-    "ros-noetic-sss-fw-plane-sim" \
+    "ros-noetic-sss-fw-plane-sim (>= 1.1.0-7)" \
     "fw_plane_sim" \
     "${sim_env_pkg} (= ${VERSION}), ${base_depends}, ros-noetic-mavros, ros-noetic-mavros-msgs, ros-noetic-mavros-extras, ros-noetic-eigen-conversions, ros-noetic-geometry-msgs, ros-noetic-nav-msgs, ros-noetic-sensor-msgs, ros-noetic-tf-conversions, ros-noetic-tf2-geometry-msgs, ros-noetic-tf2-ros, ros-noetic-nodelet, ros-noetic-pluginlib, ros-noetic-visualization-msgs, ros-noetic-robot-state-publisher, ros-noetic-rviz, libboost-dev, libeigen3-dev" \
     "XGC2 Swarm Sync Sim fixed-wing plane simulation package" \
     libpx4_lib_fw libfw_plane_visualizer libfw_sim_nodelet libBHDynamic
-  meta_depends="${meta_depends}, ros-noetic-sss-fw-plane-sim (= ${VERSION})"
+  meta_depends="${meta_depends}, ros-noetic-sss-fw-plane-sim (>= 1.1.0-7) (= ${VERSION})"
 fi
 
 build_deb \
